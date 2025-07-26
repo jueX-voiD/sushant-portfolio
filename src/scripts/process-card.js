@@ -1,7 +1,7 @@
 gsap.from(".process-card .card", {
   scrollTrigger: {
     trigger: ".process-card",
-    start: "top 55%",
+    start: "top 60%",
     toggleActions: "play none none none",
   },
   x: "50%",

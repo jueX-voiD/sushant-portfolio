@@ -1,5 +1,8 @@
 import "./style.css";
-import "./header.js";
-import "./eye-tracker.js";
-import "./text-reveal.js";
-import "./process-card.js";
+import "./scripts/header.js";
+import "./scripts/eye-tracker.js";
+import "./scripts/text-reveal.js";
+import "./scripts/process-card.js";
+import "./scripts/line-wrapper.js";
+import "./scripts/model.js";
+import "./scripts/lenisScroll.js";

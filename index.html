@@ -6,8 +6,14 @@
     <title>Sushant's Portfolio</title>
     <link href="/src/style.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="/src/assets/svg/favicon.png" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.1.20/dist/lenis.css"
+    />
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script> -->
   </head>
   <body>
+    <div id="top"></div>
     <header
       class="layout header-wrapper flex place-content-between sticky top-0 overflow-x-hidden z-50"
     >
@@ -24,7 +30,11 @@
       <div
         class="hamburger flex items-start justify-end mt-[18px] absolute right-[20px] top-0 hover:cursor-pointer z-100"
       >
-        <img src="./src/assets/svg/hamburger-icon.svg" alt="hamburger_menu" />
+        <img
+          id="openHamburger"
+          src="./src/assets/svg/hamburger-icon.svg"
+          alt="hamburger_menu"
+        />
       </div>
     </header>
 
@@ -44,7 +54,7 @@
           <span>Impact.</span>
         </p>
       </div>
-      <div class="flex mx-auto">
+      <div class="flex mx-auto max-w-[400px] overflow-hidden">
         <svg
           width="397"
           height="353"
@@ -1788,17 +1798,18 @@
 
     <!-- featured projects -->
     <section class="layout py-[64px] md:py-[148px] flex flex-col gap-[32px]">
-      <div class="flex place-content-between gap-[20px]">
-        <h2 class="font-54">Featured <span>Projects</span></h2>
-        <button class="font-24 font-500 text-primary underline">
+      <div class="flex place-content-between gap-[20px] items-center">
+        <h2 class="font-54 font-bold">Featured <span>Projects</span></h2>
+        <a href="#projects" class="font-24 font-bold text-primary underline">
           View All
-        </button>
+        </a>
       </div>
 
       <div class="card-container grid grid-cols-1 md:grid-cols-2 gap-[24px]">
         <!-- card -->
         <div
-          class="project-card py-5 px-4 bg-[var(--color-neutral-20)] flex flex-col gap-[40px]"
+          class="project-container py-5 px-4 bg-[var(--color-neutral-20)] flex flex-col gap-[40px] cursor-pointer"
+          data-target=".zappstation-popup"
         >
           <img
             src="/src/assets/projects/zapp station/cover.svg"
@@ -1823,7 +1834,8 @@
         </div>
         <!-- card -->
         <div
-          class="project-card py-5 px-4 bg-[var(--color-neutral-20)] hidden md:flex flex-col gap-[40px]"
+          class="project-container py-5 px-4 bg-[var(--color-neutral-20)] hidden md:flex flex-col gap-[40px] cursor-pointer"
+          data-target=".taipo-popup"
         >
           <img
             src="./src/assets/projects/taipo/cover.svg"
@@ -1917,42 +1929,42 @@
         >
           <div class="card flex flex-col gap-6">
             <h6 class="font-40 font-bold text-neutral-50">Discover</h6>
-            <p class="font-24 text-neutral-40 font-medium">
+            <p class="font-24 text-neutral-40 font-regular">
               Understand the problem, users, and goals through research and
               discussions.
             </p>
           </div>
           <div class="card flex flex-col gap-6">
             <h6 class="font-40 font-bold text-neutral-50">Define</h6>
-            <p class="font-24 text-neutral-40 font-medium">
+            <p class="font-24 text-neutral-40 font-regular">
               Translate insights into IA, user flows, wireframes, and product
               structure.
             </p>
           </div>
           <div class="card flex flex-col gap-6">
             <h6 class="font-40 font-bold text-neutral-50">Design</h6>
-            <p class="font-24 text-neutral-40 font-medium">
+            <p class="font-24 text-neutral-40 font-regular">
               Craft clean, intuitive interfaces with usability, accessibility,
               and visual clarity in mind.
             </p>
           </div>
           <div class="card flex flex-col gap-6">
             <h6 class="font-40 font-bold text-neutral-50">Iterate</h6>
-            <p class="font-24 text-neutral-40 font-medium">
+            <p class="font-24 text-neutral-40 font-regular">
               Test, get feedback, and refine designs to improve experience and
               performance.
             </p>
           </div>
           <div class="card flex flex-col gap-6">
             <h6 class="font-40 font-bold text-neutral-50">Deliver</h6>
-            <p class="font-24 text-neutral-40 font-medium">
+            <p class="font-24 text-neutral-40 font-regular">
               Prepare responsive, developer-friendly designs with clear handoff
               and documentation.
             </p>
           </div>
           <div class="card flex flex-col gap-6">
             <h6 class="font-40 font-bold text-neutral-50">Build</h6>
-            <p class="font-24 text-neutral-40 font-medium">
+            <p class="font-24 text-neutral-40 font-regular">
               Collaborating with the Developer to bring the vision into reality.
             </p>
           </div>
@@ -1962,13 +1974,16 @@
 
     <!-- project and expertise -->
     <section
+      id="projects"
       class="layout flex flex-col gap-[120px] pt-[72px] md:pt-[352px] px-5 pb-[148px] sm:pb-[348px]"
     >
       <div class="flex gap-5 place-content-between flex-col lg:flex-row">
         <h2 class="font-56 font-bold text-neutral-50 w-[322px]">
           Projects & <span>Expertise</span>
         </h2>
-        <p class="font-24 text-neutral-40 font-medium max-w-[841px]">
+        <p
+          class="font-24 font-regular text-neutral-40 font-medium max-w-[841px]"
+        >
           Led end-to-end product design for multiple features. Established
           design systems improving consistency across products. Conducted user
           research and testing to validate design decisions. Mentored junior
@@ -1977,7 +1992,10 @@
       </div>
       <div class="projects-wrapper flex flex-col gap-14 sm:gap-10">
         <!-- zapp station -->
-        <div class="project-card group">
+        <div
+          class="project-card group project-container"
+          data-target=".zappstation-popup"
+        >
           <div class="w-full sm:w-[60%] relative">
             <p class="project-year">2023</p>
             <h3 class="project-title">Zapp Station</h3>
@@ -1993,7 +2011,10 @@
         </div>
 
         <!-- taipo -->
-        <div class="project-card group">
+        <div
+          class="project-card group project-container"
+          data-target=".taipo-popup"
+        >
           <div class="w-full sm:w-[60%] relative">
             <p class="project-year">2023</p>
             <h3 class="project-title">Taipo</h3>
@@ -2009,10 +2030,13 @@
         </div>
 
         <!-- maxihealth -->
-        <div class="project-card group">
+        <div
+          class="project-card group project-container"
+          data-target=".maxihealth-popup"
+        >
           <div class="w-full sm:w-[60%] relative">
             <p class="project-year">2023</p>
-            <h3 class="project-title">Maxihealth</h3>
+            <h3 class="project-title">MaxiHealth</h3>
             <img
               src="./src/assets/projects/maxihealth/Card/preview.png"
               class="project-preview"
@@ -2025,7 +2049,10 @@
         </div>
 
         <!-- Multichain Tournament -->
-        <div class="project-card group">
+        <div
+          class="project-card group project-container"
+          data-target=".multichainTournament-popup"
+        >
           <div class="w-full sm:w-[60%] relative">
             <p class="project-year">2024</p>
             <h3 class="project-title">Multichain Tournament</h3>
@@ -2041,7 +2068,10 @@
         </div>
 
         <!-- The Battle of Ruby Valley -->
-        <div class="project-card group">
+        <div
+          class="project-card group project-container"
+          data-target=".theBattleOfRubyVallery-popup"
+        >
           <div class="w-full sm:w-[60%] relative">
             <p class="project-year">2024</p>
             <h3 class="project-title">The Battle of Ruby Valley</h3>
@@ -2059,14 +2089,1648 @@
     </section>
 
     <!-- footer -->
-    <footer></footer>
+    <footer>
+      <div class="layout relative">
+        <h4
+          class="font-102 font-bold text-neutral-50 flex flex-col lg:flex-row group hover:underline max-w-[150px] sm:max-w-full z-20"
+        >
+          <a href="mailto:eesangstha234@gmail.com">Let's create</a>
+          <img
+            src="./src/assets/images/footer.svg"
+            class="absolute right-5 -top-20 lg:relative z-20 lg:right-0"
+            style="width: clamp(10.625rem, 7.205rem + 15.2vw, 20.125rem)"
+            alt="footer-image"
+          />
+          <a href="mailto:eesangstha234@gmail.com">
+            <span
+              class="group-hover:underline group-hover:decoration-[#35a3bb;]"
+              >Together</span
+            ></a
+          >
+        </h4>
+      </div>
+      <div
+        class="bg-[var(--color-neutral-10)] pt-[36px] sm:pt-[120px] lg:-mt-[280px]"
+      >
+        <div
+          class="layout flex flex-col gap-[44px] bg-[url('/src/assets/images/footer-bg.png')] bg-cover bg-center bg-no-repeat"
+        >
+          <div
+            class="parallex-line-wrapper flex flex-col gap-[14px] overflow-hidden"
+          >
+            <div
+              class="parallex-line bg-[var(--color-neutral-50)] min-h-9 sm:min-h-10"
+            ></div>
+            <div
+              class="parallex-line bg-[var(--color-neutral-50)] min-h-7 sm:min-h-8"
+            ></div>
+            <div
+              class="parallex-line bg-[var(--color-neutral-50)] min-h-5 sm:min-h-6"
+            ></div>
+            <div
+              class="parallex-line bg-[var(--color-neutral-50)] min-h-3 sm:min-h-4"
+            ></div>
+          </div>
+          <div
+            class="flex flex-col sm:flex-row flex-wrap gap-6 font-18 font-bold text-neutral-50 place-content-between"
+          >
+            <div class="max-w-[322px]">
+              Multidisciplinary Visual Designer with Focus on Design Aesthetic
+              and User Experience.
+            </div>
+            <div class="flex flex-col gap-[2px]">
+              <a href="mailto:eesangstha234@gmail.com"
+                >ceesangstha234@gmail.com</a
+              >
+              <a href="tel:+977 9845771471">+977 9845771471</a>
+              <p>Kathmandu, Nepal</p>
+            </div>
+            <div class="flex flex-col gap-[2px]">
+              <a href="">Resume</a>
+              <a href="https://linkedin.com/in/sushant-shrestha-764a441b0"
+                >Linkedin</a
+              >
+              <a href="https://dribbble.com/sushant_shrestha">Dribbble</a>
+            </div>
+            <div class="text-neutral-30">Copyright@ 2025</div>
+          </div>
+          <div class="relative overflow-hidden">
+            <img
+              src="./src/assets/svg/Sushant.svg"
+              alt="sushant"
+              class="w-full"
+            />
+            <div class="absolute -bottom-3 md:-bottom-10 left-[60%] z-10">
+              <a href="#top" class="relative">
+                <img
+                  src="./src/assets/svg/back-top-bg.svg"
+                  class="backtotop-bg"
+                  style="
+                    width: clamp(2.3125rem, -0.2525rem + 11.4vw, 9.4375rem);
+                  "
+                />
+                <img
+                  src="./src/assets/svg/pixel_arrow-up-solid.svg"
+                  class="backtotop-arrow"
+                  style="width: clamp(1.8125rem, 0.71rem + 4.9vw, 4.875rem)"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
+    <!-- hamburger popup -->
+    <div
+      class="hamburger-wrapper bg-white fixed max-h-[70vh] top-0 right-0 bottom-0 left-0 z-999 pt-10 pb-5 px-0 place-content-between overflow-scroll"
+    >
+      <div class="layout flex flex-col gap-5">
+        <div class="flex flex-row place-content-between items-start w-full">
+          <nav
+            class="flex flex-col gap-8 font-56 font-bold text-neutral-50 group"
+          >
+            <a href="#" class="hover:text-primary duration-150 hover:underline"
+              >Home</a
+            >
+            <a href="#" class="hover:text-primary duration-150 hover:underline"
+              >About</a
+            >
+            <a href="#" class="hover:text-primary duration-150 hover:underline"
+              >Work</a
+            >
+          </nav>
+          <div
+            id="closeHamburger"
+            class="closeHamburger cursor-pointer relative"
+          >
+            <img
+              src="./src/assets/svg/close-btn-bg.svg"
+              class="close-bg w-[60px]"
+            />
+            <img
+              src="./src/assets/svg/ix_cancel.svg"
+              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 close-cross"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col gap-8">
+          <div
+            class="flex flex-row place-content-between font-18 font-bold text-neutral-50 flex-wrap gap-2"
+          >
+            <div class="flex flex-col gap-[2px]">
+              <a href="">Resume</a>
+              <a href="">Linkedin</a>
+              <a href="">Behance</a>
+              <a href="">Dribbble</a>
+              <a href="">Instagram</a>
+            </div>
+            <div class="flex flex-col gap-[2px]">
+              <a href="mailto:eesangstha234@gmail.com"
+                >ceesangstha234@gmail.com</a
+              >
+              <a href="tel:+977 9845771471">+977 9845771471</a>
+              <p>Kathmandu, Nepal</p>
+            </div>
+            <img src="./src/assets/svg/site-logo.svg" alt="" />
+          </div>
+          <div class="flex flex-col gap-[14px] overflow-hidden">
+            <div class="bg-[var(--color-neutral-50)] min-h-9 sm:min-h-10"></div>
+            <div class="bg-[var(--color-neutral-50)] min-h-7 sm:min-h-8"></div>
+            <div class="bg-[var(--color-neutral-50)] min-h-5 sm:min-h-6"></div>
+            <div class="bg-[var(--color-neutral-50)] min-h-3 sm:min-h-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- zapp station model -->
+    <div
+      class="popup zappstation-popup bg-white fixed h-[90vh] right-0 left-0 bottom-0 z-100 overflow-x-hidden"
+    >
+      <div class="layout">
+        <!-- title -->
+        <div
+          class="flex flex-row place-content-between border-b-[6px] border-[#08C06A] pb-2 bg-white sticky top-0 pt-6 sm:pt-14"
+        >
+          <h2 class="font-56 font-bold text-neutral-50">Zapp Station</h2>
+          <div class="close-popup cursor-pointer relative">
+            <img
+              src="./src/assets/svg/close-btn-bg.svg"
+              class="close-bg w-[60px]"
+            />
+            <img
+              src="./src/assets/svg/ix_cancel.svg"
+              class="absolute top-[31px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            />
+          </div>
+        </div>
+        <!-- description -->
+        <div class="flex flex-col gap-[100px] sm:gap-[120px]">
+          <div
+            class="py-8 sm:py-12 flex flex-col gap-x-5 gap-y-14 place-content-between md:flex-row"
+          >
+            <div class="flex flex-row gap-6 place-content-between">
+              <div class="flex flex-col gap-7 w-[108px]">
+                <h5 class="font-20 font-bold text-neutral-30">Year</h5>
+                <p class="font-18 font-bold text-neutral-50">2023</p>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Worked on</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">
+                    Branding & Logo Design
+                  </p>
+                  <p class="font-18 font-bold text-neutral-50">User Research</p>
+                  <p class="font-18 font-bold text-neutral-50">Wire-framing</p>
+                  <p class="font-18 font-bold text-neutral-50">UI Design</p>
+                  <p class="font-18 font-bold text-neutral-50">Design System</p>
+                  <p class="font-18 font-bold text-neutral-50">
+                    Illustration Style
+                  </p>
+                  <p class="font-18 font-bold text-neutral-50">Prototype</p>
+                  <p class="font-18 font-bold text-neutral-50">
+                    Usability Testing
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-7 max-w-[789px]">
+              <h6 class="font-48 font-bold text-neutral-50">
+                Zapp Station is an
+                <span class="!text-neutral-50">EV charging station finder</span>
+                app.
+              </h6>
+              <p class="font-medium font-24 text-neutral-50">
+                EV drivers were experiencing constant anxiety about charging
+                availability. Research with 15+ users revealed the core
+                issue: unreliable information leading to broken trust in the
+                charging infrastructure. So Zapp Station is introduced to help
+                riders for easily accessing the chargers and plan the long rides
+                care free.
+              </p>
+            </div>
+          </div>
+          <!-- imgae grid -->
+          <div class="flex flex-col gap-4">
+            <div class="bg-[#2E5E49] p-3 sm:py-6 sm:px-8">
+              <div
+                class="grid gap-y-4 gap-x-6 grid-cols-2 [grid-template-rows:repeat(6,_1fr)] [grid-template-areas:'area1_area2''area1_area2''area3_area4''area3_area5''area6_area6''area6_area6'] sm:grid-cols-3 sm:[grid-template-rows:2fr_1fr] sm:[grid-template-areas:'area1_area2_area3''area4_area5_area6']"
+              >
+                <div class="[grid-area:area1]">
+                  <img
+                    src="./src/assets/projects/zapp station/Card/Portfolio/Frame 26085547.svg"
+                    class="w-full"
+                  />
+                </div>
+                <div class="[grid-area:area2] object-cover">
+                  <img
+                    src="./src/assets/projects/zapp station/Card/Portfolio/Frame 26085548.svg"
+                    class="w-full"
+                  />
+                </div>
+                <div class="[grid-area:area3]">
+                  <img
+                    src="./src/assets/projects/zapp station/Card/Portfolio/Frame 26085549.svg"
+                    class="w-full"
+                  />
+                </div>
+                <div class="[grid-area:area4]">
+                  <img
+                    src="./src/assets/projects/zapp station/Card/Portfolio/Frame 26085550.svg"
+                    class="w-full"
+                  />
+                </div>
+                <div class="[grid-area:area5]">
+                  <img
+                    src="./src/assets/projects/zapp station/Card/Portfolio/Frame 26085552.svg"
+                    class="w-full"
+                  />
+                </div>
+                <div class="[grid-area:area6] b">
+                  <img
+                    src="./src/assets/projects/zapp station/Card/Portfolio/Frame 26085551.svg"
+                    class="w-full"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/zapp station/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/zapp station/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- role -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">My Role</h3>
+            <div class="flex flex-col gap-[52px] max-w-[796px] text-neutral-50">
+              <div class="font-36 font-bold">
+                I led the project as both a
+                <span class="!text-neutral-50">Brand Designer</span> and
+                <span class="!text-neutral-50">Product Designer</span>.
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Brand Identity / Logo Design</h5>
+                <p class="font-24 font-medium">
+                  EV is the replacement for carbon emission vehicles or engines
+                  so it signifies the preservation of nature thats the
+                  preservation of greenery, so I have the idea in color by
+                  sticking to the mother nature color which is light green signs
+                  of green energy and friendly as well. Then for the type I
+                  created the custom logo font just fot Zapp and created in a
+                  slightly tilted manner with round minimal style signifies
+                  technology and motion of evolution. Also created the Logo mark
+                  or we call it Monogram, which is representing the landmark
+                  with “Z” on it and also a leaf like structure to dedicated
+                  greenery of environment.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Product UI/UX Designer</h5>
+                <p class="font-24 font-medium">
+                  A human-first UI with soft interactions and focused flows
+                  Built-in design system to ensure consistency across screens
+                  Clean, distraction-free interface to help users act quickly
+                  and confidently Tested for mobile, smartwatch, and car
+                  dashboard environments
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img src="./src/assets/projects/zapp station/Frame 110.png" />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/zapp station/Frame 111.png"
+                class="min-w-0 w-[60%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/zapp station/Frame 112.png"
+                class="min-w-0 w-[40%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/zapp station/Frame 113.png"
+                class="min-w-0 w-[40%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/zapp station/Frame 114.png"
+                class="min-w-0 w-[60%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- challenges -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Challenges</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">No reliable charger info:</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  EV drivers often reach stations that are offline, full, or out
+                  of service.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">No real-time updates:</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  Users have no live status — they can’t tell if a charger is
+                  working or available.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  No trip planning around charging:
+                </h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  Long trips are stressful without knowing where and when to
+                  charge.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Missing station details:</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  Most apps don’t show charger types, photos, or nearby
+                  amenities.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">No tool for station owners:</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  Merchants couldn’t easily list or update station info, leading
+                  to outdated data.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/zapp station/Card/Portfolio/Frame 109.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/zapp station/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/zapp station/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- Solutions -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Solutions</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">Real-time map</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  Integration real time map of EV stations with live charger
+                  status.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 ]">
+                <h5 class="font-36 font-bold">Trip Planner</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  Introduced the trip planner according with charging stops
+                  along a selected route.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Vehicle onboarding</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  Add you EVs with dynamic, engaging UI so that the app can
+                  recognize your ev and set accordingly.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/zapp station/Card/Card/Portfolio/Frame 94.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/zapp station/Card/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/zapp station/Card/Card/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- Solutions -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Solutions</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">Advanced filter</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  Addition of filter by charger type, distance, amenities and
+                  nearby location, favorites etc.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 ]">
+                <h5 class="font-36 font-bold">Subscription</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  Subscription plan has added so that for busy schedule there
+                  will be no delay and hassel free charging based charging
+                  access.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Merchant UI</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  We added the merchant side app interface as well for station
+                  owner so that they can update station info, photos, and
+                  amenities.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/zapp station/Card/Portfolio/Frame 94.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/zapp station/Card/Portfolio/Frame 26086613.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/zapp station/Card/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- process -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Process</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">Research & Discovery</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  User interviews, ride-alongs with taxi drivers, competitive
+                  analysis, and pain point mapping.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 ]">
+                <h5 class="font-36 font-bold">Solution Architecture</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  Feature prioritization, user flow design, and cross-platform
+                  experience mapping.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  UI, Interaction and Design System
+                </h5>
+                <p class="font-24 font-medium max-w-[511px]">
+                  Intuitive interface for customers and station owners along
+                  with Component library creation with 50+ elements ensuring
+                  consistency across iOS, Android, and CarPlay.
+                </p>
+                <p class="font-24 font-medium max-w-[511px]">
+                  Different interaction for different actions are created to
+                  maintain lively hood of the app and maintained the interaction
+                  consistency along with vehicle onboarding.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Testing & Iteration</h5>
+                <p class="font-24 font-medium sm:w-[511px]">
+                  sability testing, A/B testing of critical flows, and beta
+                  testing with target user group
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/zapp station/Card/Card/Portfolio/Frame 100.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/zapp station/Card/Card/Portfolio/Frame 101.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- outcome -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Outcome</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <ul>
+                  <li class="font-24 font-medium list-disc">
+                    Zapp Station reduces charging anxiety and saves EV users
+                    time by providing clear, real-time, and reliable charging
+                    information.
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Long-distance travel becomes easier and stress-free with the
+                    Trip Planner feature.
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Merchants benefit by attracting users with verified,
+                    up-to-date station data creating a smarter EV ecosystem
+                    overall.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/zapp station/Card/Card/Portfolio/Frame 26086612.png"
+            />
+          </div>
+        </div>
+        <!-- next project -->
+        <div class="flex flex-col gap-10 my-10 sm:my-[120px] items-center">
+          <h2 class="font-56 font-bold text-neutral-50">
+            Next<span> Project</span>
+          </h2>
+          <!-- card -->
+          <div
+            class="project-card py-5 px-4 bg-[var(--color-neutral-20)] md:flex flex-col gap-[40px] max-w-[668px]"
+          >
+            <img
+              src="./src/assets/projects/taipo/cover.svg"
+              alt="Taipo Cover"
+              class="w-full max-h-[420px] object-cover"
+            />
+            <div class="project-brief-wrapper flex flex-col gap-[12px]">
+              <div class="flex flex-row gap-[4px]">
+                <p class="font-20 font-bold text-neutral-40">2023</p>
+                <h4 class="font-20 font-bold text-secondary">Taipo</h4>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <h5 class="font-28 text-neutral-50 font-bold">
+                  Takeaway & Fine Dinning Restaurant Website.
+                </h5>
+                <p class="font-18 font-medium text-neutral-50">
+                  Designed elegant dual-service responsive website design
+                  bridging takeaway convenience with fine dining sophistication.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- taipo model -->
+    <div
+      class="popup taipo-popup bg-white fixed h-[90vh] right-0 left-0 bottom-0 z-100 overflow-x-hidden"
+    >
+      <div class="layout">
+        <!-- title -->
+        <div
+          class="flex flex-row place-content-between border-b-[6px] border-[#00C1B8] pb-2 bg-white sticky top-0 pt-6 sm:pt-14"
+        >
+          <h2 class="font-56 font-bold text-neutral-50">Taipo</h2>
+          <div class="close-popup cursor-pointer relative">
+            <img
+              src="./src/assets/svg/close-btn-bg.svg"
+              class="close-bg w-[60px]"
+            />
+            <img
+              src="./src/assets/svg/ix_cancel.svg"
+              class="absolute top-[31px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            />
+          </div>
+        </div>
+        <!-- description -->
+        <div class="flex flex-col gap-[100px] sm:gap-[120px]">
+          <div
+            class="py-8 sm:py-12 flex flex-col gap-x-5 gap-y-14 place-content-between md:flex-row"
+          >
+            <div class="flex flex-row gap-6 place-content-between">
+              <div class="flex flex-col gap-7 w-[108px]">
+                <h5 class="font-20 font-bold text-neutral-30">Year</h5>
+                <p class="font-18 font-bold text-neutral-50">2023</p>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Worked on</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">Moodboarding</p>
+                  <p class="font-18 font-bold text-neutral-50">UI UX Design</p>
+                  <p class="font-18 font-bold text-neutral-50">
+                    Interaction Design
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Tools</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">Figma</p>
+                  <p class="font-18 font-bold text-neutral-50">Illustrator</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-7 max-w-[789px]">
+              <h6 class="font-48 font-bold text-neutral-50">
+                Elegant dual-service website design bridging takeaway
+                convenience with fine dining sophistication
+              </h6>
+              <p class="font-medium font-24 text-neutral-50">
+                Taipo is the USA based restaurant who is providing the takeaway
+                service along with the fine dining to its customers. The owner
+                wants to make a website for the restaurant which is
+                aesthetically and visually matched to the restaurant vibes and
+                pleasing to the customers so that they can’t miss the vibes and
+                also the functionally easy to access menu for the provided
+                cousines.
+              </p>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/taipo/Card/Portfolio/Frame 94.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/taipo/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/taipo/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- process -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Process</h3>
+            <div class="flex flex-col gap-[52px] max-w-[796px] text-neutral-50">
+              <div class="flex flex-col gap-3">
+                <h5 class="font-48 font-bold">Researches and Mood-boarding</h5>
+                <p class="font-24 font-medium">
+                  As vibe is clean, elegant for takeaway restaurant side and
+                  premium and cozy for fine dining side. Accordingly researched
+                  for the imagery and menu style for the website.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-48 font-bold">
+                  UI Designs for takeaway and fine dining side.
+                </h5>
+                <p class="font-24 font-medium">
+                  The owner wants to stick with the vibes of the restaurant and
+                  dishes to be flex minimally and with smooth interaction. And
+                  as physically the fine dining section is after the takeaway
+                  side so as per the physical form in website is created.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-48 font-bold">Interactions Designs</h5>
+                <p class="font-24 font-medium">
+                  Experimented and created the seamless and lively micro-
+                  interaction for components and transition between the takeaway
+                  side and fine dining.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/taipo/Card/Card/Portfolio/Frame 94.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/taipo/Card/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/taipo/Card/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+            <img
+              src="./src/assets/projects/taipo/Card/Card/Portfolio/Frame 109.png"
+            />
+          </div>
+          <!-- outcome -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Outcome</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <ul>
+                  <li class="font-24 font-medium list-disc">
+                    Unified digital experience maintaining brand consistency
+                    while serving distinct user needs.
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Aesthetically pleasing responsive website
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Smooth interactions in menu and transition between takeaway
+                    and fine dinning side.
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Easy and aesthetics reservations
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-16">
+            <img
+              src="./src/assets/projects/taipo/Card/Card/Portfolio/Frame 111.png"
+            />
+            <img
+              src="./src/assets/projects/taipo/Card/Card/Portfolio/Frame 113.png"
+            />
+            <img
+              src="./src/assets/projects/taipo/Card/Card/Portfolio/Frame 112.png"
+            />
+            <img
+              src="./src/assets/projects/taipo/Card/Card/Portfolio/Frame 162.png"
+            />
+          </div>
+        </div>
+        <!-- next project -->
+        <div class="flex flex-col gap-10 my-10 sm:my-[120px] items-center">
+          <h2 class="font-56 font-bold text-neutral-50">
+            Next<span> Project</span>
+          </h2>
+          <!-- card -->
+          <div
+            class="project-card py-5 px-4 bg-[var(--color-neutral-20)] md:flex flex-col gap-[40px] max-w-[668px]"
+          >
+            <img
+              src="./src/assets/projects/taipo/cover.svg"
+              alt="Taipo Cover"
+              class="w-full max-h-[420px] object-cover"
+            />
+            <div class="project-brief-wrapper flex flex-col gap-[12px]">
+              <div class="flex flex-row gap-[4px]">
+                <p class="font-20 font-bold text-neutral-40">2023</p>
+                <h4 class="font-20 font-bold text-secondary">Taipo</h4>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <h5 class="font-28 text-neutral-50 font-bold">
+                  Takeaway & Fine Dinning Restaurant Website.
+                </h5>
+                <p class="font-18 font-medium text-neutral-50">
+                  Designed elegant dual-service responsive website design
+                  bridging takeaway convenience with fine dining sophistication.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MaxiHealth model -->
+    <div
+      class="popup maxihealth-popup bg-white fixed h-[90vh] right-0 left-0 bottom-0 z-100 overflow-x-hidden"
+    >
+      <div class="layout">
+        <!-- title -->
+        <div
+          class="flex flex-row place-content-between border-b-[6px] border-[#32987A] pb-2 bg-white sticky top-0 pt-6 sm:pt-14"
+        >
+          <h2 class="font-56 font-bold text-neutral-50">MaxiHealth</h2>
+          <div class="close-popup cursor-pointer relative">
+            <img
+              src="./src/assets/svg/close-btn-bg.svg"
+              class="close-bg w-[60px]"
+            />
+            <img
+              src="./src/assets/svg/ix_cancel.svg"
+              class="absolute top-[31px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            />
+          </div>
+        </div>
+        <!-- description -->
+        <div class="flex flex-col gap-[100px] sm:gap-[120px]">
+          <div
+            class="py-8 sm:py-12 flex flex-col gap-x-5 gap-y-14 place-content-between md:flex-row"
+          >
+            <div class="flex flex-row gap-6 place-content-between">
+              <div class="flex flex-col gap-7 w-[108px]">
+                <h5 class="font-20 font-bold text-neutral-30">Year</h5>
+                <p class="font-18 font-bold text-neutral-50">2023</p>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Worked on</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">UI Design</p>
+                  <p class="font-18 font-bold text-neutral-50">Illustration</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Tools</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">Figma</p>
+                  <p class="font-18 font-bold text-neutral-50">Illustrator</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-7 max-w-[789px]">
+              <h6 class="font-48 font-bold text-neutral-50">
+                Connecting Health & Technology Through Intuitive Design
+              </h6>
+              <p class="font-medium font-24 text-neutral-50">
+                MaxiHealth is a modern web platform offering curated health
+                service packages to individuals and organizations. It connects
+                users with top healthcare professionals — allowing them to
+                access plans and services from the comfort of their home.
+                MaxiHealth also partners with companies to provide employee
+                health packages, making health benefits more accessible and
+                transparent through a simple, reliable website.
+              </p>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/maxihealth/Card/Portfolio/Frame 94.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/maxihealth/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[35%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/maxihealth/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[65%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- challenges -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Challenges</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">
+                  Trust and reliability in design
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Health platforms must look and feel credible. The UI needed to
+                  reflect both professionalism and approachability.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Cluttered information flow</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Users were unsure what MaxiHealth offered and how it worked.
+                  The goal was to simplify the flow and make it easy to compare
+                  plans.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Dry and cold visual tone</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Health sites are often dull or overly corporate. We wanted to
+                  add a friendly and human touch with illustrations and soft
+                  visuals.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Complex plan selection</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Choosing the right package can be overwhelming. We designed
+                  clear CTAs, intuitive forms, and playful guidance to help
+                  users decide.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  Video and education integration
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Explaining how MaxiHealth works was key — we added video
+                  sections and visual storytelling to engage and inform users.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/maxihealth/Card/Card/Portfolio/Frame 94.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/maxihealth/Card/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/maxihealth/Card/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/maxihealth/Card/Card/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/maxihealth/Card/Card/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- process -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Process</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <p class="font-24 font-medium sm:w-[796px]">
+                  I led the UI design and crafted a clean, minimal visual system
+                  with a human touch. I also designed custom illustrations to
+                  balance seriousness with warmth — making the experience
+                  friendly and reliable.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <ul>
+                  <li class="font-24 font-medium list-disc">
+                    Designed the responsive website layout, forms, pricing UI,
+                    and package flows
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Created a soft, illustration-based visual language
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Curated responsive UI in Figma for all viewports
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Worked closely with the product team to refine messaging,
+                    trust cues, and info hierarchy
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/maxihealth/Card/Card/Card/Portfolio/Frame 163.png"
+            />
+            <img
+              src="./src/assets/projects/maxihealth/Card/Card/Card/Portfolio/Frame 162.png"
+            />
+          </div>
+          <!-- outcome -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Outcome</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <p class="font-24 font-medium sm:w-[796px]">
+                  MaxiHealth now presents itself as a reliable, modern health
+                  brand. Users feel confident exploring and purchasing health
+                  packages online. The illustration-led design gives it
+                  personality, while the clean UI ensures usability and trust —
+                  key in the health industry.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/maxihealth/Card/Card/Card/Card/Portfolio/Frame 162.png"
+            />
+          </div>
+        </div>
+        <!-- next project -->
+        <div class="flex flex-col gap-10 my-10 sm:my-[120px] items-center">
+          <h2 class="font-56 font-bold text-neutral-50">
+            Next<span> Project</span>
+          </h2>
+          <!-- card -->
+          <div
+            class="project-card py-5 px-4 bg-[var(--color-neutral-20)] md:flex flex-col gap-[40px] max-w-[668px]"
+          >
+            <img
+              src="./src/assets/projects/taipo/cover.svg"
+              alt="Taipo Cover"
+              class="w-full max-h-[420px] object-cover"
+            />
+            <div class="project-brief-wrapper flex flex-col gap-[12px]">
+              <div class="flex flex-row gap-[4px]">
+                <p class="font-20 font-bold text-neutral-40">2023</p>
+                <h4 class="font-20 font-bold text-secondary">Taipo</h4>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <h5 class="font-28 text-neutral-50 font-bold">
+                  Takeaway & Fine Dinning Restaurant Website.
+                </h5>
+                <p class="font-18 font-medium text-neutral-50">
+                  Designed elegant dual-service responsive website design
+                  bridging takeaway convenience with fine dining sophistication.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Multichain tournament model -->
+    <div
+      class="popup multichainTournament-popup bg-white fixed h-[90vh] right-0 left-0 bottom-0 z-100 overflow-x-hidden"
+    >
+      <div class="layout">
+        <!-- title -->
+        <div
+          class="flex flex-row place-content-between border-b-[6px] border-[#20615B] pb-2 bg-white sticky top-0 pt-6 sm:pt-14"
+        >
+          <h2 class="font-56 font-bold text-neutral-50">
+            Multichain Tournament
+          </h2>
+          <div class="close-popup cursor-pointer relative">
+            <img
+              src="./src/assets/svg/close-btn-bg.svg"
+              class="close-bg w-[60px]"
+            />
+            <img
+              src="./src/assets/svg/ix_cancel.svg"
+              class="absolute top-[31px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            />
+          </div>
+        </div>
+        <!-- description -->
+        <div class="flex flex-col gap-[100px] sm:gap-[120px]">
+          <div
+            class="py-8 sm:py-12 flex flex-col gap-x-5 gap-y-14 place-content-between md:flex-row"
+          >
+            <div class="flex flex-row gap-6 place-content-between">
+              <div class="flex flex-col gap-7 w-[108px]">
+                <h5 class="font-20 font-bold text-neutral-30">Year</h5>
+                <p class="font-18 font-bold text-neutral-50">2024</p>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Worked on</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">IA Design</p>
+                  <p class="font-18 font-bold text-neutral-50">User Flow</p>
+                  <p class="font-18 font-bold text-neutral-50">UI/UX Design</p>
+                  <p class="font-18 font-bold text-neutral-50">
+                    Interaction Design
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Tools</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">Figma</p>
+                  <p class="font-18 font-bold text-neutral-50">FigJam</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-7 max-w-[789px]">
+              <h6 class="font-48 font-bold text-neutral-50">
+                Web3 platform where players can play tournament from
+                <span class="!text-neutral-50">different wallet </span>or
+                <span class="!text-neutral-50">network</span>.
+              </h6>
+              <p class="font-medium font-24 text-neutral-50">
+                Multichain Tournament is a Web3-based gaming platform that
+                brings turn-based games like Gangwars into a structured,
+                competitive ecosystem. The platform allows players to join
+                tournaments, manage team profiles, view match history, and climb
+                leaderboards — all while using a seamless wallet or zk-login
+                onboarding system. It’s built for competitive players and Web3
+                gamers looking for smooth tournament participation,
+                decentralized player identity, and team-based gameplay.
+              </p>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/Multichain Tournament  /Card/Portfolio/Frame 94.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/Multichain Tournament  /Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[35%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/Multichain Tournament  /Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[65%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- challenges -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Challenges</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">
+                  Complex onboarding with Web3 logins
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Players had to connect via crypto wallets or zk login. The
+                  challenge was to make this smooth and beginner-friendly.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  Real-time match scheduling clarity
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Designing an intuitive experience for players to view
+                  schedules, join matches, and get real-time updates was key.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Bracket structure design</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Brackets are core to the experience. I custom-designed a
+                  clear, scrollable bracket UI with interactive hover states and
+                  team mapping.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  Player and team profile clarity
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Gamers needed personalized spaces showing their identity,
+                  match history, stats, and their team's data — all within a
+                  compact and readable layout.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  Game info without overwhelming users
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Presenting the concept of a multichain tournament platform,
+                  blockchain tech, and game mechanics — without overwhelming new
+                  users — was a balance of UX writing and UI flow.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/Multichain Tournament  /Card/Card/Portfolio/Frame 94.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/Multichain Tournament  /Card/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/Multichain Tournament  /Card/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+            <img
+              src="./src/assets/projects/Multichain Tournament  /Card/Card/Portfolio/Frame 110.png"
+            />
+          </div>
+          <!-- process -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Process</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <p class="font-24 font-medium sm:w-[796px]">
+                  As the UI/UX Designer, I shaped the product’s core flows and
+                  interaction model. From wallet connection to match join flow,
+                  my goal was to keep things fast, clear, and exciting for
+                  competitive players.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <ul>
+                  <li class="font-24 font-medium list-disc">
+                    Designed the onboarding flow (wallet + zk-login)
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Created custom bracket layouts for mobile and desktop
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Designed leaderboards, profile views, and match interfaces
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Focused on micro-interactions and feedback to keep players
+                    engaged
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Structured complex Web3 interactions into simple steps
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/Multichain Tournament  /Card/Card/Portfolio/Frame 163.png"
+            />
+            <img
+              src="./src/assets/projects/Multichain Tournament  /Card/Card/Portfolio/Frame 162.png"
+            />
+          </div>
+          <!-- outcome -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Outcome</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Multichain Tournament transforms how players interact with
+                  Web3 games. The result is a clear, engaging platform where
+                  players can join matches effortlessly, track performance, and
+                  connect with teams — all through a UI designed to reduce
+                  friction and enhance competitive energy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/Multichain Tournament  /Card/Card/Card/Portfolio/Frame 162.png"
+            />
+            <img
+              src="./src/assets/projects/Multichain Tournament  /Card/Card/Card/Card/Portfolio/Frame 26086620.png"
+            />
+          </div>
+        </div>
+        <!-- next project -->
+        <div class="flex flex-col gap-10 my-10 sm:my-[120px] items-center">
+          <h2 class="font-56 font-bold text-neutral-50">
+            Next<span> Project</span>
+          </h2>
+          <!-- card -->
+          <div
+            class="project-card py-5 px-4 bg-[var(--color-neutral-20)] md:flex flex-col gap-[40px] max-w-[668px]"
+          >
+            <img
+              src="./src/assets/projects/taipo/cover.svg"
+              alt="Taipo Cover"
+              class="w-full max-h-[420px] object-cover"
+            />
+            <div class="project-brief-wrapper flex flex-col gap-[12px]">
+              <div class="flex flex-row gap-[4px]">
+                <p class="font-20 font-bold text-neutral-40">2023</p>
+                <h4 class="font-20 font-bold text-secondary">Taipo</h4>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <h5 class="font-28 text-neutral-50 font-bold">
+                  Takeaway & Fine Dinning Restaurant Website.
+                </h5>
+                <p class="font-18 font-medium text-neutral-50">
+                  Designed elegant dual-service responsive website design
+                  bridging takeaway convenience with fine dining sophistication.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ruby Valley model -->
+    <div
+      class="popup theBattleOfRubyVallery-popup bg-white fixed h-[90vh] right-0 left-0 bottom-0 z-100 overflow-x-hidden"
+    >
+      <div class="layout">
+        <!-- title -->
+        <div
+          class="flex flex-row place-content-between border-b-[6px] border-[#1B3B64] pb-2 bg-white sticky top-0 pt-6 sm:pt-14"
+        >
+          <h2 class="font-56 font-bold text-neutral-50">Ruby Valley</h2>
+          <div class="close-popup cursor-pointer relative">
+            <img
+              src="./src/assets/svg/close-btn-bg.svg"
+              class="close-bg w-[60px]"
+            />
+            <img
+              src="./src/assets/svg/ix_cancel.svg"
+              class="absolute top-[31px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            />
+          </div>
+        </div>
+        <!-- description -->
+        <div class="flex flex-col gap-[100px] sm:gap-[120px]">
+          <div
+            class="py-8 sm:py-12 flex flex-col gap-x-5 gap-y-14 place-content-between md:flex-row"
+          >
+            <div class="flex flex-row gap-6 place-content-between">
+              <div class="flex flex-col gap-7 w-[108px]">
+                <h5 class="font-20 font-bold text-neutral-30">Year</h5>
+                <p class="font-18 font-bold text-neutral-50">2024</p>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Worked on</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">Logo Design</p>
+                  <p class="font-18 font-bold text-neutral-50">Research</p>
+                  <p class="font-18 font-bold text-neutral-50">IA Design</p>
+                  <p class="font-18 font-bold text-neutral-50">User Flow</p>
+                  <p class="font-18 font-bold text-neutral-50">UI Design</p>
+                  <p class="font-18 font-bold text-neutral-50">Design System</p>
+                  <p class="font-18 font-bold text-neutral-50">
+                    Illustration and Assets Designs
+                  </p>
+                  <p class="font-18 font-bold text-neutral-50">Prototype</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-7 max-w-[789px]">
+              <h6 class="font-48 font-bold text-neutral-50">
+                A web3 pixel war where
+                <span class="!text-neutral-50">Factions Fight </span>for
+                <span class="!text-neutral-50"> Territory</span>.
+              </h6>
+              <p class="font-medium font-24 text-neutral-50">
+                The Battle of Ruby Valley is a Web3-based pixel art NFT game
+                where players are assigned to factions and battle for territory
+                in a dynamic, expanding valley map. Players earn rewards, stake
+                tokens, and conquer regions through strategic attacks and
+                faction wars.
+              </p>
+              <p class="font-medium font-24 text-neutral-50">
+                Built on blockchain, the game blends NFT mechanics with
+                territorial gameplay and pixel art aesthetics, offering
+                immersive community-driven battles powered by real token staking
+                and earning.
+              </p>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/ruby valley/Card/Portfolio/Branding Section.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/ruby valley/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/ruby valley/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- challenges -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Challenges</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">Web3 onboarding complexity</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Wallet connection and player onboarding needed to be simple,
+                  gamified, and intuitive, especially for new Web3 users.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Dynamic war flows</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  I designed the entire flow — from entering a war, attacking,
+                  and ending the battle — with clear feedback loops and engaging
+                  visuals.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  Faction assignment and gameplay clarity
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Players are divided into factions. I designed faction summary
+                  UIs, profile views, and status screens that are both thematic
+                  and easy to navigate.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/ruby valley/Card/Portfolio/Frame 110.png"
+            />
+            <img
+              src="./src/assets/projects/ruby valley/Card/Portfolio/Frame 112.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/ruby valley/Card/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[60%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/ruby valley/Card/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[40%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- challenges -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Challenges</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">Pixel art asset integration</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  I created original pixel art assets consistent with the game’s
+                  lore and mechanics — from map icons to character/faction
+                  illustrations.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Token mechanics</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  The game involves staking and swapping tokens. I designed the
+                  in-game token swap interface, ensuring secure and seamless
+                  interactions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/ruby valley/Card/Card/Portfolio/Frame 109.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/ruby valley/Card/Card/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/ruby valley/Card/Card/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- process -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Process</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <p class="font-24 font-medium sm:w-[796px]">
+                  As the UI/UX Designer, I shaped the product’s core flows and
+                  interaction model. From wallet connection to match join flow,
+                  my goal was to keep things fast, clear, and exciting for
+                  competitive players.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <ul>
+                  <li class="font-24 font-medium list-disc">
+                    Designed the UI/UX for onboarding, battles, staking, and
+                    profiles
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Crafted pixel art game assets and icons for maps, factions,
+                    and badges
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Created micro-interactions and animations to enhance the
+                    feel of war progression
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Mapped out Web3 flows (wallet connect, staking, claim
+                    rewards) in an engaging, game-first way
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Delivered a consistent design system combining pixel visuals
+                    with Web3 UI patterns
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/ruby valley/Card/Card/Card/Portfolio/Frame 94.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="./src/assets/projects/ruby valley/Card/Card/Card/Card/Portfolio/Frame 95.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="./src/assets/projects/ruby valley/Card/Card/Card/Card/Portfolio/Frame 96.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- outcome -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Outcome</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <p class="font-24 font-medium sm:w-[796px]">
+                  The Battle of Ruby Valley now stands as a pixel-perfect,
+                  Web3-native game that’s both immersive and user-friendly. The
+                  onboarding and staking flows lower the barrier for new users,
+                  while custom UI and pixel visuals keep the experience playful
+                  yet powerful.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="./src/assets/projects/ruby valley/Card/Card/Card/Card/Card/Portfolio/Frame 103.png"
+            />
+          </div>
+        </div>
+        <!-- next project -->
+        <div class="flex flex-col gap-10 my-10 sm:my-[120px] items-center">
+          <h2 class="font-56 font-bold text-neutral-50">
+            Next<span> Project</span>
+          </h2>
+          <!-- card -->
+          <div
+            class="project-card py-5 px-4 bg-[var(--color-neutral-20)] md:flex flex-col gap-[40px] max-w-[668px]"
+          >
+            <img
+              src="./src/assets/projects/taipo/cover.svg"
+              alt="Taipo Cover"
+              class="w-full max-h-[420px] object-cover"
+            />
+            <div class="project-brief-wrapper flex flex-col gap-[12px]">
+              <div class="flex flex-row gap-[4px]">
+                <p class="font-20 font-bold text-neutral-40">2023</p>
+                <h4 class="font-20 font-bold text-secondary">Taipo</h4>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <h5 class="font-28 text-neutral-50 font-bold">
+                  Takeaway & Fine Dinning Restaurant Website.
+                </h5>
+                <p class="font-18 font-medium text-neutral-50">
+                  Designed elegant dual-service responsive website design
+                  bridging takeaway convenience with fine dining sophistication.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
 
-    <!-- Your bundled Vite JS -->
     <script type="module" src="/src/main.js"></script>
+    <div class="shared-overlay fixed inset-0 bg-black/50 z-90 hidden"></div>
   </body>
 </html>
