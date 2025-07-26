@@ -3174,6 +3174,558 @@
       </div>
     </div>
 
+    <!-- Multichain tournament model -->
+    <div
+      class="popup multichainTournament-popup bg-white fixed h-[85vh] right-0 left-0 bottom-0 z-100 overflow-x-hidden"
+    >
+      <div class="layout">
+        <!-- title -->
+        <div
+          class="flex flex-row place-content-between border-b-[6px] border-[#32987A] pb-2 bg-white sticky top-0 pt-6 sm:pt-14"
+        >
+          <h2 class="font-56 font-bold text-neutral-50">
+            Multichain Tournament
+          </h2>
+          <div class="close-popup cursor-pointer relative">
+            <img
+              src="data:image/svg+xml,%3csvg%20width='60'%20height='60'%20viewBox='0%200%2060%2060'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M25.3222%201.24905C28.2184%20-0.416348%2031.7816%20-0.416349%2034.6778%201.24904L38.1389%203.23926C39.0783%203.77945%2040.1042%204.15285%2041.1711%204.34288L45.1017%205.04303C48.3908%205.6289%2051.1204%207.9193%2052.2685%2011.0567L53.6406%2014.806C54.013%2015.8237%2054.5588%2016.7692%2055.254%2017.6005L57.8149%2020.6634C59.958%2023.2264%2060.5767%2026.7355%2059.4395%2029.8769L58.0806%2033.631C57.7117%2034.6499%2057.5221%2035.7251%2057.5202%2036.8087L57.5133%2040.8012C57.5074%2044.1421%2055.7258%2047.2279%2052.8355%2048.9034L49.3813%2050.9057C48.4438%2051.4492%2047.6075%2052.1509%2046.9095%2052.9798L44.3378%2056.0338C42.1859%2058.5893%2038.8376%2059.808%2035.5464%2059.2336L31.6134%2058.5472C30.5459%2058.3609%2029.4541%2058.3609%2028.3866%2058.5472L24.4536%2059.2336C21.1624%2059.808%2017.8141%2058.5893%2015.6622%2056.0338L13.0905%2052.9798C12.3925%2052.1509%2011.5562%2051.4492%2010.6186%2050.9057L7.16454%2048.9034C4.27417%2047.2279%202.49255%2044.1421%202.48673%2040.8012L2.47977%2036.8087C2.47788%2035.7251%202.2883%2034.6499%201.91944%2033.631L0.560472%2029.8769C-0.5767%2026.7355%200.0420466%2023.2264%202.18506%2020.6634L4.74604%2017.6005C5.44116%2016.7692%205.98703%2015.8237%206.35944%2014.806L7.73149%2011.0567C8.87961%207.9193%2011.6092%205.6289%2014.8983%205.04303L18.8289%204.34289C19.8958%204.15285%2020.9217%203.77945%2021.8611%203.23926L25.3222%201.24905Z'%20fill='%23D1D1D1'/%3e%3c/svg%3e"
+              class="close-bg w-[60px]"
+            />
+            <img
+              src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M35.8135%2011.1072L33.2688%208.5625L21.9966%2019.8526L10.7244%208.5625L8.17969%2011.1072L19.4698%2022.3794L8.17969%2033.6516L10.7244%2036.1963L21.9966%2024.9062L33.2688%2036.1963L35.8135%2033.6516L24.5234%2022.3794L35.8135%2011.1072Z'%20fill='%233A3A3A'/%3e%3c/svg%3e"
+              class="absolute top-[31px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            />
+          </div>
+        </div>
+        <!-- description -->
+        <div class="flex flex-col gap-[100px] sm:gap-[120px]">
+          <div
+            class="py-8 sm:py-12 flex flex-col gap-x-5 gap-y-14 place-content-between md:flex-row"
+          >
+            <div class="flex flex-row gap-6 place-content-between">
+              <div class="flex flex-col gap-7 w-[108px]">
+                <h5 class="font-20 font-bold text-neutral-30">Year</h5>
+                <p class="font-18 font-bold text-neutral-50">2024</p>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Worked on</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">IA Design</p>
+                  <p class="font-18 font-bold text-neutral-50">User Flow</p>
+                  <p class="font-18 font-bold text-neutral-50">UI/UX Design</p>
+                  <p class="font-18 font-bold text-neutral-50">
+                    Interaction Design
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Tools</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">Figma</p>
+                  <p class="font-18 font-bold text-neutral-50">FigJam</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-7 max-w-[789px]">
+              <h6 class="font-48 font-bold text-neutral-50">
+                Web3 platform where players can play tournament from
+                <span class="!text-neutral-50">different wallet </span>or
+                <span class="!text-neutral-50">network</span>.
+              </h6>
+              <p class="font-medium font-24 text-neutral-50">
+                Multichain Tournament is a Web3-based gaming platform that
+                brings turn-based games like Gangwars into a structured,
+                competitive ecosystem. The platform allows players to join
+                tournaments, manage team profiles, view match history, and climb
+                leaderboards — all while using a seamless wallet or zk-login
+                onboarding system. It’s built for competitive players and Web3
+                gamers looking for smooth tournament participation,
+                decentralized player identity, and team-based gameplay.
+              </p>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="/sushant-portfolio/assets/Frame%2094-Ctx_s4k6.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="/sushant-portfolio/assets/Frame%2095-COPivO_P.png"
+                class="min-w-0 w-[35%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="/sushant-portfolio/assets/Frame%2096-CL80TME_.png"
+                class="min-w-0 w-[65%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- challenges -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Challenges</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">
+                  Complex onboarding with Web3 logins
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Players had to connect via crypto wallets or zk login. The
+                  challenge was to make this smooth and beginner-friendly.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  Real-time match scheduling clarity
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Designing an intuitive experience for players to view
+                  schedules, join matches, and get real-time updates was key.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Bracket structure design</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Brackets are core to the experience. I custom-designed a
+                  clear, scrollable bracket UI with interactive hover states and
+                  team mapping.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  Player and team profile clarity
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Gamers needed personalized spaces showing their identity,
+                  match history, stats, and their team's data — all within a
+                  compact and readable layout.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  Game info without overwhelming users
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Presenting the concept of a multichain tournament platform,
+                  blockchain tech, and game mechanics — without overwhelming new
+                  users — was a balance of UX writing and UI flow.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="/sushant-portfolio/assets/Frame%2094-Hu9IWnUH.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="/sushant-portfolio/assets/Frame%2095-DmXJrmNG.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="/sushant-portfolio/assets/Frame%2096-h65lL7-N.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+            <img
+              src="/sushant-portfolio/assets/Frame%20110-g77OnEA5.png"
+            />
+          </div>
+          <!-- process -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Process</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <p class="font-24 font-medium sm:w-[796px]">
+                  As the UI/UX Designer, I shaped the product’s core flows and
+                  interaction model. From wallet connection to match join flow,
+                  my goal was to keep things fast, clear, and exciting for
+                  competitive players.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <ul>
+                  <li class="font-24 font-medium list-disc">
+                    Designed the onboarding flow (wallet + zk-login)
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Created custom bracket layouts for mobile and desktop
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Designed leaderboards, profile views, and match interfaces
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Focused on micro-interactions and feedback to keep players
+                    engaged
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Structured complex Web3 interactions into simple steps
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="/sushant-portfolio/assets/Frame%20163-rCvxGfk4.png"
+            />
+            <img
+              src="/sushant-portfolio/assets/Frame%20162-kJ4aZnBh.png"
+            />
+          </div>
+          <!-- outcome -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Outcome</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Multichain Tournament transforms how players interact with
+                  Web3 games. The result is a clear, engaging platform where
+                  players can join matches effortlessly, track performance, and
+                  connect with teams — all through a UI designed to reduce
+                  friction and enhance competitive energy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="/sushant-portfolio/assets/Frame%20162-OoyfbWpa.png"
+            />
+            <img
+              src="/sushant-portfolio/assets/Frame%2026086620-DC6Oqjtw.png"
+            />
+          </div>
+        </div>
+        <!-- next project -->
+        <div class="flex flex-col gap-10 my-10 sm:my-[120px] items-center">
+          <h2 class="font-56 font-bold text-neutral-50">
+            Next<span> Project</span>
+          </h2>
+          <!-- card -->
+          <div
+            class="project-card py-5 px-4 bg-[var(--color-neutral-20)] md:flex flex-col gap-[40px] max-w-[668px]"
+          >
+            <img
+              src="/sushant-portfolio/assets/cover-7xJobAcc.svg"
+              alt="Taipo Cover"
+              class="w-full max-h-[420px] object-cover"
+            />
+            <div class="project-brief-wrapper flex flex-col gap-[12px]">
+              <div class="flex flex-row gap-[4px]">
+                <p class="font-20 font-bold text-neutral-40">2023</p>
+                <h4 class="font-20 font-bold text-secondary">Taipo</h4>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <h5 class="font-28 text-neutral-50 font-bold">
+                  Takeaway & Fine Dinning Restaurant Website.
+                </h5>
+                <p class="font-18 font-medium text-neutral-50">
+                  Designed elegant dual-service responsive website design
+                  bridging takeaway convenience with fine dining sophistication.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ruby Valley model -->
+    <div
+      class="popup theBattleOfRubyVallery-popup bg-white fixed h-[85vh] right-0 left-0 bottom-0 z-100 overflow-x-hidden"
+    >
+      <div class="layout">
+        <!-- title -->
+        <div
+          class="flex flex-row place-content-between border-b-[6px] border-[#32987A] pb-2 bg-white sticky top-0 pt-6 sm:pt-14"
+        >
+          <h2 class="font-56 font-bold text-neutral-50">Ruby Valley</h2>
+          <div class="close-popup cursor-pointer relative">
+            <img
+              src="data:image/svg+xml,%3csvg%20width='60'%20height='60'%20viewBox='0%200%2060%2060'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M25.3222%201.24905C28.2184%20-0.416348%2031.7816%20-0.416349%2034.6778%201.24904L38.1389%203.23926C39.0783%203.77945%2040.1042%204.15285%2041.1711%204.34288L45.1017%205.04303C48.3908%205.6289%2051.1204%207.9193%2052.2685%2011.0567L53.6406%2014.806C54.013%2015.8237%2054.5588%2016.7692%2055.254%2017.6005L57.8149%2020.6634C59.958%2023.2264%2060.5767%2026.7355%2059.4395%2029.8769L58.0806%2033.631C57.7117%2034.6499%2057.5221%2035.7251%2057.5202%2036.8087L57.5133%2040.8012C57.5074%2044.1421%2055.7258%2047.2279%2052.8355%2048.9034L49.3813%2050.9057C48.4438%2051.4492%2047.6075%2052.1509%2046.9095%2052.9798L44.3378%2056.0338C42.1859%2058.5893%2038.8376%2059.808%2035.5464%2059.2336L31.6134%2058.5472C30.5459%2058.3609%2029.4541%2058.3609%2028.3866%2058.5472L24.4536%2059.2336C21.1624%2059.808%2017.8141%2058.5893%2015.6622%2056.0338L13.0905%2052.9798C12.3925%2052.1509%2011.5562%2051.4492%2010.6186%2050.9057L7.16454%2048.9034C4.27417%2047.2279%202.49255%2044.1421%202.48673%2040.8012L2.47977%2036.8087C2.47788%2035.7251%202.2883%2034.6499%201.91944%2033.631L0.560472%2029.8769C-0.5767%2026.7355%200.0420466%2023.2264%202.18506%2020.6634L4.74604%2017.6005C5.44116%2016.7692%205.98703%2015.8237%206.35944%2014.806L7.73149%2011.0567C8.87961%207.9193%2011.6092%205.6289%2014.8983%205.04303L18.8289%204.34289C19.8958%204.15285%2020.9217%203.77945%2021.8611%203.23926L25.3222%201.24905Z'%20fill='%23D1D1D1'/%3e%3c/svg%3e"
+              class="close-bg w-[60px]"
+            />
+            <img
+              src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M35.8135%2011.1072L33.2688%208.5625L21.9966%2019.8526L10.7244%208.5625L8.17969%2011.1072L19.4698%2022.3794L8.17969%2033.6516L10.7244%2036.1963L21.9966%2024.9062L33.2688%2036.1963L35.8135%2033.6516L24.5234%2022.3794L35.8135%2011.1072Z'%20fill='%233A3A3A'/%3e%3c/svg%3e"
+              class="absolute top-[31px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            />
+          </div>
+        </div>
+        <!-- description -->
+        <div class="flex flex-col gap-[100px] sm:gap-[120px]">
+          <div
+            class="py-8 sm:py-12 flex flex-col gap-x-5 gap-y-14 place-content-between md:flex-row"
+          >
+            <div class="flex flex-row gap-6 place-content-between">
+              <div class="flex flex-col gap-7 w-[108px]">
+                <h5 class="font-20 font-bold text-neutral-30">Year</h5>
+                <p class="font-18 font-bold text-neutral-50">2024</p>
+              </div>
+              <div class="flex flex-col gap-7">
+                <h5 class="font-20 font-bold text-neutral-30">Worked on</h5>
+                <div class="flex flex-col gap-1 whitespace-nowrap">
+                  <p class="font-18 font-bold text-neutral-50">Logo Design</p>
+                  <p class="font-18 font-bold text-neutral-50">Research</p>
+                  <p class="font-18 font-bold text-neutral-50">IA Design</p>
+                  <p class="font-18 font-bold text-neutral-50">User Flow</p>
+                  <p class="font-18 font-bold text-neutral-50">UI Design</p>
+                  <p class="font-18 font-bold text-neutral-50">Design System</p>
+                  <p class="font-18 font-bold text-neutral-50">
+                    Illustration and Assets Designs
+                  </p>
+                  <p class="font-18 font-bold text-neutral-50">Prototype</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-7 max-w-[789px]">
+              <h6 class="font-48 font-bold text-neutral-50">
+                A web3 pixel war where
+                <span class="!text-neutral-50">Factions Fight </span>for
+                <span class="!text-neutral-50"> Territory</span>.
+              </h6>
+              <p class="font-medium font-24 text-neutral-50">
+                The Battle of Ruby Valley is a Web3-based pixel art NFT game
+                where players are assigned to factions and battle for territory
+                in a dynamic, expanding valley map. Players earn rewards, stake
+                tokens, and conquer regions through strategic attacks and
+                faction wars.
+              </p>
+              <p class="font-medium font-24 text-neutral-50">
+                Built on blockchain, the game blends NFT mechanics with
+                territorial gameplay and pixel art aesthetics, offering
+                immersive community-driven battles powered by real token staking
+                and earning.
+              </p>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="/sushant-portfolio/assets/Branding%20Section-ChPLCJNU.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="/sushant-portfolio/assets/Frame%2095-G4wJ3xQa.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="/sushant-portfolio/assets/Frame%2096-DyoIAbqJ.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- challenges -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Challenges</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">Web3 onboarding complexity</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Wallet connection and player onboarding needed to be simple,
+                  gamified, and intuitive, especially for new Web3 users.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Dynamic war flows</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  I designed the entire flow — from entering a war, attacking,
+                  and ending the battle — with clear feedback loops and engaging
+                  visuals.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">
+                  Faction assignment and gameplay clarity
+                </h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  Players are divided into factions. I designed faction summary
+                  UIs, profile views, and status screens that are both thematic
+                  and easy to navigate.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="/sushant-portfolio/assets/Frame%20110-CnHyQeYq.png"
+            />
+            <img
+              src="/sushant-portfolio/assets/Frame%20112-DolbEtSk.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="/sushant-portfolio/assets/Frame%2095-ZDwfLPah.png"
+                class="min-w-0 w-[60%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="/sushant-portfolio/assets/Frame%2096-D3v5JuJf.png"
+                class="min-w-0 w-[40%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- challenges -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Challenges</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <h5 class="font-36 font-bold">Pixel art asset integration</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  I created original pixel art assets consistent with the game’s
+                  lore and mechanics — from map icons to character/faction
+                  illustrations.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h5 class="font-36 font-bold">Token mechanics</h5>
+                <p class="font-24 font-medium sm:w-[796px]">
+                  The game involves staking and swapping tokens. I designed the
+                  in-game token swap interface, ensuring secure and seamless
+                  interactions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="/sushant-portfolio/assets/Frame%20109-DcNk1YZP.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="/sushant-portfolio/assets/Frame%2096-DgvIfIrC.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="/sushant-portfolio/assets/Frame%2095-D7EMi6w2.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- process -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Process</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <p class="font-24 font-medium sm:w-[796px]">
+                  As the UI/UX Designer, I shaped the product’s core flows and
+                  interaction model. From wallet connection to match join flow,
+                  my goal was to keep things fast, clear, and exciting for
+                  competitive players.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <ul>
+                  <li class="font-24 font-medium list-disc">
+                    Designed the UI/UX for onboarding, battles, staking, and
+                    profiles
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Crafted pixel art game assets and icons for maps, factions,
+                    and badges
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Created micro-interactions and animations to enhance the
+                    feel of war progression
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Mapped out Web3 flows (wallet connect, staking, claim
+                    rewards) in an engaging, game-first way
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Delivered a consistent design system combining pixel visuals
+                    with Web3 UI patterns
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="/sushant-portfolio/assets/Frame%2094-C_v6KelL.png"
+            />
+            <div class="flex gap-4 max-w-full">
+              <img
+                src="/sushant-portfolio/assets/Frame%2095-B6dYooZG.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 111"
+              />
+              <img
+                src="/sushant-portfolio/assets/Frame%2096-BAeGTEyU.png"
+                class="min-w-0 w-[50%] object-cover"
+                alt="Frame 112"
+              />
+            </div>
+          </div>
+          <!-- outcome -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-30">Outcome</h3>
+            <div class="flex flex-col gap-[52px] text-neutral-50">
+              <div class="flex flex-col gap-3 sm:w-[796px] max-w-[796px]">
+                <p class="font-24 font-medium sm:w-[796px]">
+                  The Battle of Ruby Valley now stands as a pixel-perfect,
+                  Web3-native game that’s both immersive and user-friendly. The
+                  onboarding and staking flows lower the barrier for new users,
+                  while custom UI and pixel visuals keep the experience playful
+                  yet powerful.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- image grid -->
+          <div class="flex flex-col gap-4">
+            <img
+              src="/sushant-portfolio/assets/Frame%20103-vP3T0RrT.png"
+            />
+          </div>
+        </div>
+        <!-- next project -->
+        <div class="flex flex-col gap-10 my-10 sm:my-[120px] items-center">
+          <h2 class="font-56 font-bold text-neutral-50">
+            Next<span> Project</span>
+          </h2>
+          <!-- card -->
+          <div
+            class="project-card py-5 px-4 bg-[var(--color-neutral-20)] md:flex flex-col gap-[40px] max-w-[668px]"
+          >
+            <img
+              src="/sushant-portfolio/assets/cover-7xJobAcc.svg"
+              alt="Taipo Cover"
+              class="w-full max-h-[420px] object-cover"
+            />
+            <div class="project-brief-wrapper flex flex-col gap-[12px]">
+              <div class="flex flex-row gap-[4px]">
+                <p class="font-20 font-bold text-neutral-40">2023</p>
+                <h4 class="font-20 font-bold text-secondary">Taipo</h4>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <h5 class="font-28 text-neutral-50 font-bold">
+                  Takeaway & Fine Dinning Restaurant Website.
+                </h5>
+                <p class="font-18 font-medium text-neutral-50">
+                  Designed elegant dual-service responsive website design
+                  bridging takeaway convenience with fine dining sophistication.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
