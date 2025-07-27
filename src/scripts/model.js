@@ -11,6 +11,12 @@ closeHamburger.addEventListener("click", () => {
   hamburgerWrapper.classList.remove("open");
   document.body.classList.remove("no-scroll");
 });
+document.querySelectorAll('.hamburger-wrapper a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburgerWrapper.classList.remove("open");
+    document.body.classList.remove("no-scroll");
+  });
+});
 
 const overlay = document.querySelector(".shared-overlay");
 const body = document.body;
