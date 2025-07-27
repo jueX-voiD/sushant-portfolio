@@ -6,3 +6,4 @@ import "./scripts/process-card.js";
 import "./scripts/line-wrapper.js";
 import "./scripts/model.js";
 import "./scripts/lenisScroll.js";
+import "./scripts/custom-cursor.js";
