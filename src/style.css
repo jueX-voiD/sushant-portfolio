@@ -239,7 +239,7 @@
 }
 
 /* cursor change */
-.project-container {
+.project-cursor {
   cursor: none;
 }
 
@@ -275,4 +275,28 @@
   .custom-cursor {
     display: none;
   }
+}
+
+/* circling footer svg  */
+/* Custom animations and SVG-specific styles that can't be done with Tailwind alone */
+.circle-text {
+  letter-spacing: 0.95px;
+}
+
+.animated-text {
+  animation: rotate 10s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.open-to-work svg {
+  overflow: visible;
 }

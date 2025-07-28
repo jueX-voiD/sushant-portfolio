@@ -1,7 +1,7 @@
 const cursor = document.querySelector(".custom-cursor");
 const cursorSvg = document.querySelector(".cursor-svg");
 const cursorText = document.querySelector(".cursor-text");
-const projectContainers = document.querySelectorAll(".project-container");
+const projectContainers = document.querySelectorAll(".project-cursor");
 
 // Mouse move event to follow cursor
 document.addEventListener("mousemove", (e) => {

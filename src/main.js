@@ -7,3 +7,4 @@ import "./scripts/line-wrapper.js";
 import "./scripts/model.js";
 import "./scripts/lenisScroll.js";
 import "./scripts/custom-cursor.js";
+import "./scripts/open-to-work.js";
