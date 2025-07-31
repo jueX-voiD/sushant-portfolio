@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "Neue Montreal";
-  src: url("./assets/fonts/NeueMontreal-Medium.woff2") format("woff2");
+  src: url("./assets/fonts/NeueMontreal-Medium.otf") format("otf");
   font-weight: 500;
   font-style: normal;
 }
@@ -31,6 +31,7 @@
   html {
     font-family: var(--font-neue);
     scroll-behavior: smooth;
+    user-select: none;
   }
 
   span {
@@ -299,4 +300,11 @@
 
 .open-to-work svg {
   overflow: visible;
+}
+
+#tuner-line,
+#click-chg {
+  cursor: pointer;
+  transform-origin: 82px 284px;
+  transition: transform 0.4s ease;
 }

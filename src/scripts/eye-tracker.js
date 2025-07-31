@@ -24,3 +24,32 @@ document.addEventListener("mousemove", (e) => {
 
   eyeGroup.setAttribute("transform", `translate(${offsetX}, ${offsetY})`);
 });
+
+const changeBg = document.getElementById("chg-bg");
+const turnerLine = document.getElementById("tuner-line");
+const clickChg = document.getElementById("click-chg");
+
+const colors = ["#96BAE4", "#FF9596", "#7EC89E", "#E4CA96"];
+const rotations = [37, 74, 111, 0];
+
+let colorIndex = parseInt(localStorage.getItem("colorIndex")) || 0;
+
+changeBg.setAttribute("fill", colors[colorIndex]);
+turnerLine.style.transform = `rotate(${rotations[colorIndex]}deg)`;
+
+const clickSound = new Audio("src/assets/mixkit-clear-mouse-clicks-2997.wav");
+
+function cycleFillColor() {
+  colorIndex = (colorIndex + 1) % colors.length;
+
+  changeBg.setAttribute("fill", colors[colorIndex]);
+  turnerLine.style.transform = `rotate(${rotations[colorIndex]}deg)`;
+
+  localStorage.setItem("colorIndex", colorIndex);
+
+  clickSound.currentTime = 0;
+  clickSound.play();
+}
+
+clickChg.addEventListener("click", cycleFillColor);
+turnerLine.addEventListener("click", cycleFillColor);
