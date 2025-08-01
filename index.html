@@ -1818,7 +1818,7 @@
       <div class="card-container grid grid-cols-1 md:grid-cols-2 gap-[24px]">
         <!-- card -->
         <div
-          class="project-container py-5 px-4 bg-[var(--color-neutral-20)] flex flex-col gap-[40px] cursor-pointer project-cursor"
+          class="project-container project-cursor py-5 px-4 bg-[var(--color-neutral-20)] flex flex-col gap-[40px] cusor-pointer"
           data-target=".zappstation-popup"
         >
           <img
@@ -1881,7 +1881,8 @@
           About <span>Me</span>
         </h2>
         <div
-          class="py-5 px-4 md:p-6 bg-[var(--color-neutral-20)] flex flex-col gap-[40px] -mt-5"
+          class="project-container project-cursor py-5 px-4 md:p-6 bg-[var(--color-neutral-20)] flex flex-col gap-[40px] -mt-5"
+          data-target=".about-popup"
         >
           <div
             class="bg-[url('/src/assets/images/about-bg.png')] bg-cover bg-no-repeat bg-center flex flex-items-end"
@@ -1985,7 +1986,7 @@
 
     <!-- about popup -->
     <div
-      class="popup bg-[#E6E6E6] fixed h-[90vh] right-0 left-0 bottom-0 z-100 overflow-x-hidden"
+      class="popup about-popup bg-[#E6E6E6] fixed h-[90vh] right-0 left-0 bottom-0 z-100 overflow-x-hidden about-popup"
     >
       <div class="layout">
         <!-- title -->
@@ -2020,7 +2021,7 @@
                 emotionally engaging.
               </h2>
               <div
-                class="overflow-visible open-to-work w-[250px] h-[250px] relative"
+                class="overflow-visible open-to-work w-[250px] h-[250px] relative hidden xl:inline-block"
               >
                 <svg
                   width="250"
@@ -2076,15 +2077,15 @@
                 </div>
               </div>
             </div>
-            <div class="flex flex-row gap-11">
-              <p class="font-36 font-regular text-neutral-40">
+            <div class="flex flex-row gap-11 flex-wrap">
+              <p class="font-36 font-regular text-neutral-40 w-[613px] grow">
                 My journey started in graphic design, where I developed a deep
                 eye for visual detail. <br /><br />
                 In 2020, I discovered UI/UX design and got curious. That
                 curiosity turned into a full-time focus — and I’ve been
                 designing product interfaces ever since.
               </p>
-              <p class="font-36 font-regular text-neutral-40">
+              <p class="font-36 font-regular text-neutral-40 w-[613px] grow">
                 Over the years, I’ve worked across digital products, brands, and
                 even games, blending form and function to solve real-world
                 problems.
@@ -2101,6 +2102,229 @@
                 Helping clients in design from concept to product by:
               </h4>
             </div>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-2 gap-y-21 gap-x-6"
+            >
+              <div class="flex flex-col gap-6">
+                <h6 class="font-28 font-bold text-neutral-50">UI/UX Design</h6>
+                <p class="font-24 font-medium text-neutral-40">
+                  I design intuitive, user-first interfaces that solve real
+                  problems and elevate product experiences. I also conduct UX
+                  audits to identify friction points and improve usability.
+                </p>
+              </div>
+              <div class="flex flex-col gap-6">
+                <h6 class="font-28 font-bold text-neutral-50">
+                  Brand Identity & Visual Systems
+                </h6>
+                <p class="font-24 font-medium text-neutral-40">
+                  I create cohesive and memorable brand systems — from logos to
+                  color palettes and design guidelines. Whether you’re launching
+                  or rebranding, I help define your visual presence.
+                </p>
+              </div>
+              <div class="flex flex-col gap-6">
+                <h6 class="font-28 font-bold text-neutral-50">
+                  Game UI, Assets & Pixel Art
+                </h6>
+                <p class="font-24 font-medium text-neutral-40">
+                  I design complete UI flows, pixel art characters, and game
+                  assets for mobile and indie games. My work blends usability
+                  with playful aesthetics tailored to gameplay.
+                </p>
+              </div>
+              <div class="flex flex-col gap-6">
+                <h6 class="font-28 font-bold text-neutral-50">
+                  llustrations (Vector, Sketch, Digital)
+                </h6>
+                <p class="font-24 font-medium text-neutral-40">
+                  From icons to full-scene illustrations, I craft visuals that
+                  enhance storytelling and product personality. Each
+                  illustration is custom-made to fit your brand and message.
+                </p>
+              </div>
+              <div class="flex flex-col gap-6">
+                <h6 class="font-28 font-bold text-neutral-50">
+                  Motion Graphics & Interaction Design
+                </h6>
+                <p class="font-24 font-medium text-neutral-40">
+                  I bring static designs to life with subtle animations and
+                  interactive flows. This helps improve engagement and guides
+                  users naturally through the interface.
+                </p>
+              </div>
+              <div class="flex flex-col gap-6">
+                <h6 class="font-28 font-bold text-neutral-50">
+                  2D/3D Visual Assets for Web & Apps
+                </h6>
+                <p class="font-24 font-medium text-neutral-40">
+                  I design clean 2D visuals and lightweight 3D assets using
+                  tools like Spline and Blender. These enhance digital products
+                  with depth, clarity, and modern aesthetics.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- experiences -->
+          <div class="flex flex-row flex-wrap place-content-between gap-5">
+            <h3 class="font-28 font-bold text-neutral-50">Experiences</h3>
+            <div class="flex flex-col gap-[56px] text-neutral-50 w-[796px]">
+              <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-6">
+                  <div class="flex flex-col gap-4">
+                    <div class="flex flex-row gap-1">
+                      <h6 class="font-20 font-bold text-neutral-30">
+                        2023-2025
+                      </h6>
+                      <p class="font-20 font-bold text-secondary">Blackdove</p>
+                    </div>
+                  </div>
+                  <div class="font-48 font-bold">Product, UI/UX Designer</div>
+                </div>
+                <ul class="flex flex-col gap-[6px]">
+                  <li class="font-24 font-medium list-disc">
+                    Led end-to-end product design for multiple features
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Established design systems improving consistency across
+                    products
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Conducted user research and testing to validate design
+                    decisions
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Mentored junior designers and streamlined design processes
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-6">
+                  <div class="flex flex-col gap-4">
+                    <div class="flex flex-row gap-1">
+                      <h6 class="font-20 font-bold text-neutral-30">
+                        2021-2023
+                      </h6>
+                      <p class="font-20 font-bold text-secondary">Blackdove</p>
+                    </div>
+                  </div>
+                  <div class="font-48 font-bold">UI/UX, Visual Designer</div>
+                </div>
+                <ul class="flex flex-col gap-[6px]">
+                  <li class="font-24 font-medium list-disc">
+                    Designed responsive interfaces for web and mobile
+                    applications
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Created interactive prototypes and wireframes
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Participated in user testing and incorporated feedback
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-6">
+                  <div class="flex flex-col gap-4">
+                    <div class="flex flex-row gap-1">
+                      <h6 class="font-20 font-bold text-neutral-30">
+                        2021-2022
+                      </h6>
+                      <p class="font-20 font-bold text-secondary">
+                        Amigo ( Freelance)
+                      </p>
+                    </div>
+                  </div>
+                  <div class="font-48 font-bold">Logo & Motion Designer</div>
+                </div>
+                <ul class="flex flex-col gap-[6px]">
+                  <li class="font-24 font-medium list-disc">
+                    Designed animation for gifts, used in live sessions for app
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Story boarding and researches
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Optimized deliverables, more useful for dev.
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-6">
+                  <div class="flex flex-col gap-4">
+                    <div class="flex flex-row gap-1">
+                      <h6 class="font-20 font-bold text-neutral-30">
+                        2020-2021
+                      </h6>
+                      <p class="font-20 font-bold text-secondary">
+                        Supreme IT Solution
+                      </p>
+                    </div>
+                  </div>
+                  <div class="font-48 font-bold">Graphics, Motion Designer</div>
+                </div>
+                <ul class="flex flex-col gap-[6px]">
+                  <li class="font-24 font-medium list-disc">
+                    Created Visually appealing Digital Marketing assets for the
+                    clients.
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Crafted print designs for physical presence of clients more
+                    interesting.
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Created motion graphics for the Applications.
+                  </li>
+                  <li class="font-24 font-medium list-disc">
+                    Designed user mobile responsive interfaces for diverse
+                    client projects.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- about footer -->
+        <div class="flex flex-col gap-8 pt-[260px] pb-5">
+          <div
+            class="flex flex-row place-content-between font-18 font-bold text-neutral-50 flex-wrap gap-2"
+          >
+            <div class="flex flex-col gap-[2px]">
+              <a
+                href="./My_Resume_compressed.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Resume</a
+              >
+              <a
+                href="https://linkedin.com/in/sushant-shrestha-764a441b0"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+              <a
+                href="https://dribbble.com/sushant_shrestha"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Dribbble</a
+              >
+            </div>
+            <div class="flex flex-col gap-[2px]">
+              <a href="mailto:eesangstha234@gmail.com"
+                >ceesangstha234@gmail.com</a
+              >
+              <a href="tel:+977 9845771471">+977 9845771471</a>
+              <p>Kathmandu, Nepal</p>
+            </div>
+            <img src="./src/assets/svg/site-logo.svg" alt="" />
+          </div>
+          <div class="flex flex-col gap-[14px] overflow-hidden">
+            <div class="bg-[var(--color-neutral-50)] min-h-9 sm:min-h-10"></div>
+            <div class="bg-[var(--color-neutral-50)] min-h-7 sm:min-h-8"></div>
+            <div class="bg-[var(--color-neutral-50)] min-h-5 sm:min-h-6"></div>
+            <div class="bg-[var(--color-neutral-50)] min-h-3 sm:min-h-4"></div>
           </div>
         </div>
       </div>
